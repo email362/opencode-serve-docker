@@ -1,0 +1,26 @@
+services:
+  opencode:
+    build: .
+    container_name: opencode-web
+    restart: "unless-stopped"
+    stdin_open: true
+    tty: true
+    ports:
+      - "4096:4096"
+    environment:
+      # Use these to log in to the web UI from other computers
+      - OPENCODE_SERVER_PASSWORD
+      - OPENCODE_SERVER_USERNAME
+    volumes:
+      # Your primary development directory
+      - ~/Projects:/workspace
+      
+      # Persistence for OpenCode's own state
+      - ~/.config/opencode:/root/.config/opencode
+      - ~/.local/share/opencode:/root/.local/share/opencode
+      
+      # The OAuth tokens you rsync'd from WSL
+      - ~/.codex:/root/.codex
+      - ~/.gemini:/root/.gemini
+      
+    working_dir: /workspace

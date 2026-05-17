@@ -1,0 +1,23 @@
+.env
+
+# MacOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.com.apple.timemachine.supported
+.com.apple.timemachine.supported
+
+# Docker
+docker-compose.override.yaml
+docker-compose.override.yml
+
+# Node
+node_modules
+package-lock.json
+package.json
